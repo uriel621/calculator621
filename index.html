@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<style>
+#box
+{
+    position:relative;
+    background-color: black;
+    height:325px;
+    width:250px;
+    border-radius:10px;
+    padding-left: 15px;
+    /*top:80px;*/
+    /*left:40%;*/
+}
+#output {
+    position:relative;
+    /*left:2px;*/
+    top:8px;
+    height: 50px;
+    color:black;
+    background-color: lightgrey;
+    border: solid;
+    border-radius: 10px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    font-family: "Comic Sans MS";
+    font-size: 250%;
+    text-align: right;
+    font-weight: bold;
+    /*font-size:21px;*/
+    /*text-align:right;*/
+}
+
+.number {
+    position: relative;
+    /*display: block;*/
+    text-align: center;
+    height: 45px;
+    width: 55px;
+    border-radius: 5px;
+    background-color: darkgray;
+    color: white;
+    margin: 1px;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+}
+
+.operator {
+    position: relative;
+    /*display: block;*/
+    text-align: center;
+    height: 45px;
+    width: 55px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-family: "Comic Sans MS";
+    margin: 1px;
+    font-weight: bold;
+}
+
+.clear {
+    position: relative;;
+    text-align: center;
+    height: 45px;
+    width: 85px;
+    border-radius: 5px;
+    background-color: darkseagreen;
+    color: black;
+    margin: 1px;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+}
+
+.left, .right {
+    float: left;
+}
+
+.left {
+    width: 72%;
+    box-sizing: border-box;
+}
+
+.right {
+    width: 28%;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+
+#plus {
+    height: 93px;
+
+}
+
+.last {
+    height: 30%;
+}
+</style>	
+
+</html>
+<div id="box">
+    <div id="output"></div>
+
+    <div>
+        <button class="clear" value="C">C</button>
+        <button class="clear" value="CE">CE</button>
+        <button class="operator" value="/">/</button>
+    </div>
+
+    <div>
+        <button class="number" value="7">7</button>
+        <button class="number" value="8">8</button>
+        <button class="number" value="9">9</button>
+        <button class="operator" value="x">x</button>
+    </div>
+
+    <div>
+        <button class="number" value="4">4</button>
+        <button class="number" value="5">5</button>
+        <button class="number" value="6">6</button>
+        <button class="operator" value="-">-</button>
+    </div>
+
+    <div>
+        <div class="left">
+            <button class="number" value="1">1</button>
+            <button class="number" value="2">2</button>
+            <button class="number" value="3">3</button>
+            <button class="number" value="0">0</button>
+            <button class="number" value=".">.</button>
+            <button class="operator" id="equal_button" value="=">=</button>
+        </div>
+        <div class="right"> <button class="operator" id="plus">+</button></div>
+    </div>
+</div>
+<script>
+$(document).ready(function(){
+	var input_array =[""];
+	var input_index = 0;
+
+	$("button").on("click", function(){
+		var val = $(this).text();
+
+	})
+
+	apply_click_handlers()
+
+	function apply_click_handlers(){
+		$(".number").click(input_number)
+		$(".operator").click(input_operator)
+		$("#equal_button").click(calculate)
+		$(".clear").click(clear)
+	}
+
+	function input_number(){
+		console.log($(this).text());
+		input_array[input_index] += $(this).text();
+		$("#output").empty()
+		$("#output").append(input_array)
+
+		console.log(input_array)
+	}
+
+	function input_operator(){
+		if(input_array.length === 3){
+			calculate()
+		}
+
+		input_index++;
+		input_array[input_index] = $(this).text()
+		console.log(input_array)
+		input_index++;
+		input_array[input_index] = "";
+	}	
+
+	function calculate(){
+		var operator = input_array[1];
+		var num1 = parseFloat(input_array[0]);
+		var num2 = parseFloat(input_array[2]);
+		var total = 0;
+
+		if(operator === "+"){
+        	total = num1 + num2;
+        	input_array = [""];
+        	input_array[0] = total;
+        	$("#output").empty();
+        	$("#output").append(total);
+        	input_index = 0;
+        	console.log(total)
+    	}
+    	else if(operator === "-"){
+        	total = num1 - num2;
+        	input_array = [""];
+        	input_array[0] = total;
+        	$("#output").empty();
+        	$("#output").append(total)
+        	input_index = 0;
+        	console.log(total)
+    	}
+    	else if(operator === "x"){
+        	total = num1 * num2;
+        	input_array = [""]
+        	input_array[0] = total;
+        	$("#output").empty();
+        	$("#output").append(total)
+        	input_index = 0
+        	console.log(total)
+    	}
+    	else if(operator === "/"){
+        	total = num1 / num2;
+        	input_array = [""];
+        	input_array[0] = total;
+        	$("#output").empty();
+        	$("#output").append(total)
+        	input_index = 0;
+        	console.log(total)
+    	}
+    	else {
+    		total = 0;
+    	}
+	}
+	function clear (){
+		$("#output").empty();
+		input_array = [""];
+		input_index = 0
+	}
+})
+</script>
+</body>
+</html>
