@@ -16,7 +16,7 @@ var addNumberToArray = function(number){
 }
 
 var addOperatortoArray = function(inputOperator){
-    if(result !== null){
+    if(result != null){
         numberArray[0] = result;
         result = null;
         numberArray[1] = "";
@@ -114,17 +114,18 @@ var calculator = function(){
     else {
         alert("Invalid Operator!!!")
     }
-}
-
-/*
+    /*
 Results
 */
 
-if(result !== false){
-    // document.querySelector("#output").value = result;
-    console.log(result)
+    if(result !== false){
+        document.querySelector("#output").value = result;
+        console.log(result)
+    }
+    else {
+        alert("Error!!!") 
+    }
 }
-else {
-    alert("Error!!!") 
-}
+
+
 

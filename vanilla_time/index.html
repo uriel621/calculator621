@@ -9,10 +9,10 @@
 
 <div id="box">
     <!--<div id="output"></div>-->
-    <input type="text" id="output" placeholder="Input here:">
+    <input type="text" id="output" width="25" placeholder="Input here:">
 
     <div>
-        <button type="button" class="clear" onclick="resetCalulator()">C</button>
+        <button type="button" class="clear" onclick="resetCalculator()">C</button>
         <button type="button" class="clear" onclick="resetCalculator()">CE</button>
         <button type="button" class="operator" onclick="addOperatortoArray('/')">/</button>
     </div>
@@ -36,7 +36,7 @@
             <button type="button" class="number" onclick="addNumberToArray('1')">1</button>
             <button type="button" class="number" onclick="addNumberToArray('2')">2</button>
             <button type="button" class="number" onclick="addNumberToArray('3')">3</button>
-            <button type="button" class="number" onclick="addNumberToArray('3')">0</button>
+            <button type="button" class="number" onclick="addNumberToArray('0')">0</button>
             <button type="button" class="number" onclick="addNumberToArray('.')">.</button>
             <button type="button" class="operator" onclick="calculator()" id="equal_button">=</button>
         </div>
