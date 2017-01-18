@@ -117,5 +117,10 @@ var calculator = function(){
 Results
 */
 
-
+if(result !== false){
+    document.querySelector("#display").value = result;
+}
+else {
+    alert("Error!!!") 
+}
 
