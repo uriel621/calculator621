@@ -71,7 +71,7 @@ var multiplication = function(num1, num2){
         return false;
     }
     else {
-        num1 * num2;
+        return (num1 * num2);
     }
 }
 
@@ -114,10 +114,8 @@ var calculator = function(){
     else {
         alert("Invalid Operator!!!")
     }
-    /*
-Results
-*/
 
+    //Results
     if(result !== false){
         document.querySelector("#output").value = result;
         console.log(result)
