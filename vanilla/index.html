@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="script.js"></script>
+
+<div id="box">
+    <div id="display"></div>
+
+    <div>
+        <button class="clear" value="C" onclick="resetCalulator()">C</button>
+        <button class="clear" value="CE" onclick="resetCalculator()">CE</button>
+        <button class="operator" value="/">/</button>
+    </div>
+
+    <div>
+        <button class="number" value="7">7</button>
+        <button class="number" value="8">8</button>
+        <button class="number" value="9">9</button>
+        <button class="operator" value="x">x</button>
+    </div>
+
+    <div>
+        <button class="number" value="4">4</button>
+        <button class="number" value="5">5</button>
+        <button class="number" value="6">6</button>
+        <button class="operator" value="-">-</button>
+    </div>
+
+    <div>
+        <div class="left">
+            <button class="number" value="1">1</button>
+            <button class="number" value="2">2</button>
+            <button class="number" value="3">3</button>
+            <button class="number" value="0">0</button>
+            <button class="number" value=".">.</button>
+            <button class="operator" id="equal_button" value="=">=</button>
+        </div>
+        <div class="right"> <button class="operator" id="plus">+</button></div>
+    </div>
+</div>
+</body>
+</html>
