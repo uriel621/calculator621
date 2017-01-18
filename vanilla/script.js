@@ -30,7 +30,7 @@ var resetCalculator = function(){
 }
 
 /*
-Operations functions
+Functions of Operations
 */
 
 var addition = function(num1, num2){
@@ -90,3 +90,32 @@ var division = function(num1, num2){
         }
     }
 }
+
+/*
+Functions to Execute Operations
+*/
+
+var calculator = function(){
+    if(operator === "+") {
+        result = addition(numberArray[0], numberArray[1]);
+    }
+    else if(operator === "-"){
+        result = subtraction(numberArray[0], numberArray[1]);
+    }
+    else if(operator === "*"){
+        result = multiplication(numberArray[0], numberArray[1]);
+    }
+    else if(operator === "/"){
+        result = division(numberArray[0], numberArray[1]);
+    }
+    else {
+        alert("Invalid Operator!!!")
+    }
+}
+
+/*
+Results
+*/
+
+
+
