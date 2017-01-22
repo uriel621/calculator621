@@ -2,46 +2,62 @@
 <html>
 <head>
 <title>Calculator</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+<link rel="stylesheet" type="text/css" href="css/style1.css">
+
 <script type="text/javascript" src="js/script.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<div id="box">
+<div class="container" id="box">
     <!--<div id="output"></div>-->
-    <input type="text" id="output" width="90%" placeholder="">
+    <form class="form-group">
+        
+    
+    <input type="text" id="display"  placeholder="">
 
     <div>
-        <button type="button" class="clear" onclick="resetCalculator()">C</button>
-        <button type="button" class="clear" onclick="resetCalculator()">CE</button>
-        <button type="button" class="operator" onclick="addOperatortoArray('/')">/</button>
+        <button type="button" class="" onclick="resetCalculator()">C</button>
+        <button type="button" class="" onclick="resetCalculator()">CE</button>
+        <button type="button" class="" onclick="addOperatortoArray('/')">/</button>
     </div>
 
     <div>
-        <button type="button" class="number" onclick="addNumberToArray('7')">7</button>
-        <button type="button" class="number" onclick="addNumberToArray('8')">8</button>
-        <button type="button" class="number" onclick="addNumberToArray('9')">9</button>
-        <button type="button" class="operator" onclick="addOperatortoArray('*')">x</button>
+        <button type="button" class="" onclick="addNumberToArray('7')">7</button>
+        <button type="button" class="" onclick="addNumberToArray('8')">8</button>
+        <button type="button" class="" onclick="addNumberToArray('9')">9</button>
+        <button type="button" class="" onclick="addOperatortoArray('*')">x</button>
     </div>
 
     <div>
-        <button type="button" class="number" onclick="addNumberToArray('4')">4</button>
-        <button type="button" class="number" onclick="addNumberToArray('5')">5</button>
-        <button type="button" class="number" onclick="addNumberToArray('6')">6</button>
-        <button type="button" class="operator" onclick="addOperatortoArray('-')">-</button>
+        <button type="button" class="" onclick="addNumberToArray('4')">4</button>
+        <button type="button" class="" onclick="addNumberToArray('5')">5</button>
+        <button type="button" class="" onclick="addNumberToArray('6')">6</button>
+        <button type="button" class="" onclick="addOperatortoArray('-')">-</button>
     </div>
 
     <div>
         <div class="left">
-            <button type="button" class="number" onclick="addNumberToArray('1')">1</button>
-            <button type="button" class="number" onclick="addNumberToArray('2')">2</button>
-            <button type="button" class="number" onclick="addNumberToArray('3')">3</button>
-            <button type="button" class="number" onclick="addNumberToArray('0')">0</button>
-            <button type="button" class="number" onclick="addNumberToArray('.')">.</button>
-            <button type="button" class="operator" onclick="calculator()" id="equal_button">=</button>
+            <button type="button" class="" onclick="addNumberToArray('1')">1</button>
+            <button type="button" class="" onclick="addNumberToArray('2')">2</button>
+            <button type="button" class="" onclick="addNumberToArray('3')">3</button>
+            <button type="button" class="" onclick="addNumberToArray('0')">0</button>
+            <button type="button" class="" onclick="addNumberToArray('.')">.</button>
+            <button type="button" class="" onclick="calculator()" id="equal_button">=</button>
+            <button type="button" class="" onclick="addOperatortoArray('+')" id="plus">+</button>
         </div>
-        <div class="right"> <button type="button" class="operator" onclick="addOperatortoArray('+')" id="plus">+</button></div>
+        <!--<div class="right"> <button type="button" class="operator" onclick="addOperatortoArray('+')" id="plus">+</button></div>-->
     </div>
+    </form>
 </div>
 </body>
 </html>

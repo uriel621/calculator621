@@ -1,0 +1,61 @@
+.container {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+form {
+    /*width: 30%;
+    height: auto;*/
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+    /*background-color: lightgray; */
+    padding: 3% 0%; 
+
+    background-color: black;
+    height:425px;
+    width:350px;
+    border-radius:10px;
+}
+
+button{
+    /*width: 20%;
+    height: 20%;*/
+
+    width: 20%;
+    height: 55px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: darkgray;
+    color: white;
+    
+    position: relative;
+    /*display: block;*/
+    text-align: center;
+    border-radius: 5px;
+    margin: 1px;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+}
+#output {
+    display: block;
+    margin: auto; 
+    width: 90%;
+
+    position:relative;
+    /*left:2px;*/
+    top:8px;
+    height: 50px;
+    color:black;
+    background-color: lightgrey;
+    border: solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 250%;
+    text-align: right;
+    font-weight: bold;
+    /*font-size:21px;*/
+    /*text-align:right;*/
+
+}
