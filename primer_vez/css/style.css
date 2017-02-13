@@ -1,0 +1,94 @@
+#box
+{
+    position:relative;
+    background-color: black;
+    height:325px;
+    width:250px;
+    border-radius:10px;
+    padding-left: 15px;
+    /*top:80px;*/
+    /*left:40%;*/
+}
+#output {
+    position:relative;
+    /*left:2px;*/
+    top:8px;
+    height: 50px;
+    color:black;
+    background-color: lightgrey;
+    border: solid;
+    border-radius: 10px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    font-family: "Comic Sans MS";
+    font-size: 250%;
+    text-align: right;
+    font-weight: bold;
+    /*font-size:21px;*/
+    /*text-align:right;*/
+}
+
+.number {
+    position: relative;
+    /*display: block;*/
+    text-align: center;
+    height: 45px;
+    width: 55px;
+    border-radius: 5px;
+    background-color: darkgray;
+    color: white;
+    margin: 1px;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+}
+
+.operator {
+    position: relative;
+    /*display: block;*/
+    text-align: center;
+    height: 45px;
+    width: 55px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-family: "Comic Sans MS";
+    margin: 1px;
+    font-weight: bold;
+}
+
+.clear {
+    position: relative;;
+    text-align: center;
+    height: 45px;
+    width: 85px;
+    border-radius: 5px;
+    background-color: darkseagreen;
+    color: black;
+    margin: 1px;
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+}
+
+.left, .right {
+    float: left;
+}
+
+.left {
+    width: 72%;
+    box-sizing: border-box;
+}
+
+.right {
+    width: 28%;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+
+#plus {
+    height: 93px;
+
+}
+
+.last {
+    height: 30%;
+}

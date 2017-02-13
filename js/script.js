@@ -1,91 +1,129 @@
-$(document).ready(function(){
-	var input_array =[""];
-	var input_index = 0;
+/*
+EVER URIEL GARCIA
+*/
 
-	$("button").on("click", function(){
-		var val = $(this).text();
+var numberArray = ["", ""];
+var numberIndex = 0;
+var operator = "";
+var result = null;
 
-	})
+var addNumberToArray = function(number){
+    if(result !== null){
+        result = null;
+    }
+    document.querySelector("#output").value += number;
+        numberArray[numberIndex] += number;
+}
 
-	apply_click_handlers()
+var addOperatortoArray = function(inputOperator){
+    if(result != null){
+        numberArray[0] = result;
+        result = null;
+        numberArray[1] = "";
+    }
+    numberIndex = 1;
+    document.querySelector("#output").value += inputOperator;
+    operator = inputOperator;
+}
 
-	function apply_click_handlers(){
-		$(".number").click(input_number)
-		$(".operator").click(input_operator)
-		$("#equal_button").click(calculate)
-		$(".clear").click(clear)
-	}
+var resetCalculator = function(){
+    document.querySelector("#output").value = "";
+    numberArray = ["", ""];
+    number_index = 0;
+}
 
-	function input_number(){
-		console.log($(this).text());
-		input_array[input_index] += $(this).text();
-		$("#output").empty()
-		$("#output").append(input_array)
+/*
+Functions of Operations
+*/
 
-		console.log(input_array)
-	}
+var addition = function(num1, num2){
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
 
-	function input_operator(){
-		if(input_array.length === 3){
-			calculate()
-		}
+    if(isNaN(num1) || isNaN(num2)){
+        alert("It is not going to work like that");
+        return false;
+    }
+    else {
+        return (num1 + num2);
+    }
+}
 
-		input_index++;
-		input_array[input_index] = $(this).text()
-		console.log(input_array)
-		input_index++;
-		input_array[input_index] = "";
-	}	
+var subtraction = function(num1, num2){
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
 
-	function calculate(){
-		var operator = input_array[1];
-		var num1 = parseFloat(input_array[0]);
-		var num2 = parseFloat(input_array[2]);
-		var total = 0;
+    if(isNaN(num1) || isNaN(num2)){
+        alert("It is not going to work like that");
+        return false;
+    }
+    else {
+        return (num1 - num2)
+    }
+}
 
-		if(operator === "+"){
-        	total = num1 + num2;
-        	input_array = [""];
-        	input_array[0] = total;
-        	$("#output").empty();
-        	$("#output").append(total);
-        	input_index = 0;
-        	console.log(total)
-    	}
-    	else if(operator === "-"){
-        	total = num1 - num2;
-        	input_array = [""];
-        	input_array[0] = total;
-        	$("#output").empty();
-        	$("#output").append(total)
-        	input_index = 0;
-        	console.log(total)
-    	}
-    	else if(operator === "x"){
-        	total = num1 * num2;
-        	input_array = [""]
-        	input_array[0] = total;
-        	$("#output").empty();
-        	$("#output").append(total)
-        	input_index = 0
-        	console.log(total)
-    	}
-    	else if(operator === "/"){
-        	total = num1 / num2;
-        	input_array = [""];
-        	input_array[0] = total;
-        	$("#output").empty();
-        	$("#output").append(total)
-        	input_index = 0;
-        	console.log(total)
-    	}
-    	else {
-    		total = 0;
-    	}
-	}
-	function clear (){
-		$("#output").empty();
-		input_array = [""];
-		input_index = 0
-	}
-})
+var multiplication = function(num1, num2){
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+
+    if(isNaN(num1) || isNaN(num2)){
+        alert("It is not going to work like that");
+        return false;
+    }
+    else {
+        return (num1 * num2);
+    }
+}
+
+var division = function(num1, num2){
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+
+    if(isNaN(num1) || isNaN(num2)){
+        alert("It is not going to work like that");
+        return false;  
+    }
+    else {
+        if(num2 > 0){
+            return (num1 / num2)
+        }
+        else {
+            alert("You can not divide by zero")
+            return false
+        }
+    }
+}
+
+/*
+Functions to Execute Operations
+*/
+
+var calculator = function(){
+    if(operator === "+") {
+        result = addition(numberArray[0], numberArray[1]);
+    }
+    else if(operator === "-"){
+        result = subtraction(numberArray[0], numberArray[1]);
+    }
+    else if(operator === "*"){
+        result = multiplication(numberArray[0], numberArray[1]);
+    }
+    else if(operator === "/"){
+        result = division(numberArray[0], numberArray[1]);
+    }
+    else {
+        alert("Invalid Operator!!!")
+    }
+
+    //Results
+    if(result !== false){
+        document.querySelector("#output").value = result;
+        console.log(result)
+    }
+    else {
+        alert("Error!!!") 
+    }
+}
+
+
+
